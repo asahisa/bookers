@@ -9,28 +9,32 @@
     </tr>
   </thead>
   
-  <tbody>
+    <% @books.each do |list| %>
     <tr>
-      <td>リーダブルコード</td>
-      <td>よりよいコードを書くためのシンプルで実践的なテクニック</td>
+      <td><%= list.title %></td>
+      <td><%= list.body %></td>
+      <!--<td>< %= link_to "show", book_path(book.id) %></td>-->
+
       <td>Show</td>
       <td>Edit</td>
       <td>Destroy</td>
     </tr>
-    
-  </tbody>
+      <% end %>
+
 </table>
 
+
+
 <h2>New book</h2>
-<%= form_with model: @list, id: "new-book", class: "new-book" do |f| %>
+<%= form_with model: @book, id: "new-book", class: "new-book" do |f| %>
   <div class="field">
-    <%= f.label :book_title, "Title" %>
-    <%= f.text_field :book, class: "book_title" %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, class: "book_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :book_body, "Body" %>
-    <%= f.text_area :book_body, class: "book_body" %>
+    <%= f.label :body, "Body" %>
+    <%= f.text_area :body, class: "book_body" %>
   </div>
 
   <div class="actions">
