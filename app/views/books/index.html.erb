@@ -16,7 +16,7 @@
       <td><%= books_list.body %></td>
       <td><%= link_to "Show", book_path(books_list.id) %></td>
       <td><%= link_to "Edit", edit_book_path(books_list.id) %></td>
-      <td><%= link_to "Destroy", "books/#{books_list.id}", method: :delete,
+      <td><%= link_to "Destroy", "/books/#{books_list.id}", method: :delete,
       "data-confirm" => "Are you sure?" %></td>
     </tr>
   <% end %>
@@ -39,23 +39,13 @@
   <% end %>
 
   <div class="field">
-    <div class="field_with_errors">
     <%= f.label :title, "Title" %>
-    </div>
-
-    <div class="field_with_errors">
     <%= f.text_field :title, class: "book_title" %>
-    </div>
   </div>
 
   <div class="field">
-    <div class="field_with_errors">
     <%= f.label :body, "Body" %>
-    </div>
-
-    <div class="field_with_errors">
     <%= f.text_area :body, class: "book_body" %>
-    </div>
   </div>
 
   <div class="actions">
